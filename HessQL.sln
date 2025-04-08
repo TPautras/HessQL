@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{FFDD678E-8C21-4A5B-94B1-928FC2EB5666}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HessQLParser", "HessQLParser\HessQLParser.csproj", "{FB659D08-BC6F-4E1F-804F-A6B6494129F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{FFDD678E-8C21-4A5B-94B1-928FC2EB5666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFDD678E-8C21-4A5B-94B1-928FC2EB5666}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFDD678E-8C21-4A5B-94B1-928FC2EB5666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB659D08-BC6F-4E1F-804F-A6B6494129F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB659D08-BC6F-4E1F-804F-A6B6494129F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB659D08-BC6F-4E1F-804F-A6B6494129F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB659D08-BC6F-4E1F-804F-A6B6494129F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
