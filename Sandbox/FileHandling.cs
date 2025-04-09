@@ -72,4 +72,14 @@ public class FileHandling
             return false;
         }
     }
+
+    public static void Test()
+    {
+        List<int> testNumbers = new List<int>
+        {
+            1,
+            2,
+            
+        };
+    }
 }
