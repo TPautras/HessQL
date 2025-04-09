@@ -229,7 +229,26 @@ public partial class Token
         FOR_JSON,
         OPEN_JSON
     }
-    
+
+    private sealed class TokenTypeEqualityComparer : IEqualityComparer<Token>
+    {
+        public bool Equals(Token? x, Token? y)
+        {
+            if (ReferenceEquals(x, y)) return true;
+            if (x is null) return false;
+            if (y is null) return false;
+            if (x.GetType() != y.GetType()) return false;
+            return x.TokenType == y.TokenType;
+        }
+
+        public int GetHashCode(Token obj)
+        {
+            return (int)obj.TokenType;
+        }
+    }
+
+    public static IEqualityComparer<Token> TokenTypeComparer { get; } = new TokenTypeEqualityComparer();
+
     public static readonly Dictionary<TokenTypes, string> TokenKindToStringMap = new()
     {
         { TokenTypes.UNKNOWN, "UNKNOWN" },
