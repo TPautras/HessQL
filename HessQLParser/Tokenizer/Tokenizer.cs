@@ -83,7 +83,7 @@ public partial class Tokenizer
                 }
             }
 
-            throw new Exception("Tokenize::Error -> Unexpected Token");
+            throw new Exception("Tokenize::Error -> Unexpected Token"); //TODO : Ajouter la localisation de l'erreur et un type d'erreur specifique
         }
         
         
