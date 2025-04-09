@@ -76,8 +76,12 @@ public class FileHandling
 
     public static void Test()
     {
-        const string source = "1234";
+        const string source = "Comment bonjour SELECT 'feur'\n FROM DATABASE";
         var tokens = Tokenizer.Tokenize(source);
-        Console.WriteLine(Token.Debug(tokens[0]));
+        if (tokens != null)
+            foreach (var token in tokens)
+            {
+                Console.WriteLine(Token.Debug(token));
+            }
     }
 }
