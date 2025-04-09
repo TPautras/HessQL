@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Text;
+using HessQLParser;
 
 namespace Sandbox;
 
@@ -75,11 +76,8 @@ public class FileHandling
 
     public static void Test()
     {
-        List<int> testNumbers = new List<int>
-        {
-            1,
-            2,
-            
-        };
+        const string source = "1234";
+        var tokens = Tokenizer.Tokenize(source);
+        Console.WriteLine(Token.Debug(tokens[0]));
     }
 }

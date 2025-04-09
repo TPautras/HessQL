@@ -21,6 +21,7 @@ public partial class Token(string value, Token.TokenTypes type)
         tokensTypes.Add(TokenTypes.IDENTIFIER);
         tokensTypes.Add(TokenTypes.NUMERIC);
         tokensTypes.Add(TokenTypes.STRING_LITERAL);
+        tokensTypes.Add(TokenTypes.INTEGER_LITERAL);
         string res = "";
         if (token.IsOneOfMany(tokensTypes))
             res = (TokenKindToString(token.TokenType) + ": " + token.Value);

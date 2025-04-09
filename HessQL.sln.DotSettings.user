@@ -6,5 +6,6 @@
     &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Tests.Test1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Tests.Test2&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Parser.TokensTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Parser.TokenizerTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
