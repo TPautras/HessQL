@@ -24,7 +24,7 @@ public partial class Tokenizer
         this.Tokens = new List<Token>();
         this.RegexPatterns = new List<RegexPattern>
         {
-            new RegexPattern(new Regex(@"[0-9]+(\.[0-9]+)?"), NumericHandler()),
+            new RegexPattern(new Regex(@"[0-9]+(\.[0-9]+)?"), NumericHandler()),  
             new RegexPattern(new Regex(@"\s+"), SkipHandler()),
             new RegexPattern(new Regex(@"'[^']*'"), StringHandler()),
             new RegexPattern(new Regex(@"#.*"), CommentHandler()),
@@ -124,7 +124,6 @@ public partial class Tokenizer
     
     private static RegexHandler NumericHandler()
     {
-        
         return (Tokenizer tokenizer, Match match ) =>
         {
             string matchedValue = match.Value;
@@ -144,7 +143,6 @@ public partial class Tokenizer
             tokenizer.AdvanceN(matchedValue.Length);
         };
     }
-    
     private static RegexHandler CommentHandler()
     {
         

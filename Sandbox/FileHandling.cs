@@ -76,7 +76,7 @@ public class FileHandling
 
     public static void Test()
     {
-        const string source = "Comment bonjour SELECT 'feur'\n FROM DATABASE";
+        const string source = "FROM DATABASE SELECT 1234 'bonjour' Menu m";
         var tokens = Tokenizer.Tokenize(source);
         if (tokens != null)
             foreach (var token in tokens)

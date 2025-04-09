@@ -229,6 +229,7 @@ public partial class Token
         FOR_JSON,
         OPEN_JSON
     }
+    
     public static readonly Dictionary<TokenTypes, string> TokenKindToStringMap = new()
     {
         { TokenTypes.UNKNOWN, "UNKNOWN" },
