@@ -4,6 +4,6 @@ public class Lookups
 {
     public enum BindingPower
     {
-        
+        //Test
     }
 }
