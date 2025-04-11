@@ -62,11 +62,6 @@ public partial class Tokenizer
         this.Tokens?.Add(token);
     }
 
-    private byte At()
-    {
-        return (byte)this.Source[this.Position];
-    }
-
     private string Remainder()
     {
         return this.Source.Substring(this.Position);
