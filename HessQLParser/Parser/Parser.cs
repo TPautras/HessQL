@@ -27,6 +27,7 @@ public class Parser
         while (!p.IsAtEnd())
         {
             var statements = body.Append(ParseStatements.ParseStatement(p));
+            Console.ReadKey();
         }
         
         return new BlockStatement(body);
@@ -46,9 +47,13 @@ public class Parser
 
     public bool IsAtEnd()
     {
-        return _position < _tokens.Count &&
-               Equals(CurrentTokenKind,
-                   Token.TokenTypes.END_OF_FILE);
+        bool isTokenEof = CurrentTokenKind() == Token.TokenTypes.END_OF_FILE;
+        Console.WriteLine("Position : " + _position);
+        Console.WriteLine("Token Count : " + _tokens.Count);
+        Console.WriteLine(CurrentTokenKind());
+        Console.WriteLine(isTokenEof);
+        return _position >= _tokens.Count ||
+               isTokenEof;
     }
 
     public Token.TokenTypes CurrentTokenKind()
@@ -60,7 +65,7 @@ public class Parser
     {
         var token = Peek();
         var kind = token.TokenType;
-
+        
         if (kind != expectedKind)
         {
             throw new Exception($"{errorMessage}. Expected: {expectedKind}, but got: {kind}");

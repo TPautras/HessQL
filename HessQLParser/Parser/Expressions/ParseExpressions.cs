@@ -16,9 +16,7 @@ public class ParseExpressions
             tokenType = parser.CurrentTokenKind();
 
             if (!Lookups.LedLookup.TryGetValue(tokenType, out var ledFn))
-                throw new Exception($"LED handler not found for token {tokenType}");
-
-            parser.Advance(); //TODO: Does it work ?
+                throw new Exception($"LED handler not found for token {tokenType}"); //TODO: Does it work ?
             left = ledFn(parser, left, currentBp);
         }
 

@@ -11,16 +11,13 @@ public class ParseStatements
         {
             stmtFn = Lookups.StmtLookup[parser.CurrentTokenKind()];
         }
-        catch (KeyNotFoundException)
-        {
-            
-        }
+        catch (KeyNotFoundException) {}
 
         if (stmtFn != null)
         {
             return stmtFn(parser);
         }
-        
+
         var expression = ParseExpressions.ParseExpression(parser, Lookups.BindingPower.Lowest);
         parser.Expect(Token.TokenTypes.SEMICOLON);
         
