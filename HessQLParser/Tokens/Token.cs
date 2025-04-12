@@ -1,9 +1,16 @@
 ﻿namespace HessQLParser;
 
-public partial class Token(string value, Token.TokenTypes type)
-{ 
-    public TokenTypes TokenType = type;
-    public string Value = value;
+public partial class Token
+{
+    public string Value { get; set; }
+    public TokenTypes TokenType { get; set; }
+
+    public Token(string value, TokenTypes type)
+    {
+        Value = value;
+        TokenType = type;
+    }
+
 
     public static Token NewToken(string value, Token.TokenTypes type)
     {

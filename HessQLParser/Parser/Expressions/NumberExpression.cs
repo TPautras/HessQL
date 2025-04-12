@@ -2,7 +2,7 @@
 
 public class NumberExpression :IExpression
 {
-    public float Number;
+    public float Value;
 
     public void Expression()
     {

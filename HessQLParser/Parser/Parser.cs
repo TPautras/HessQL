@@ -14,6 +14,7 @@ public class Parser
     
     public static Parser CreateParser(int position, List<Token> tokens)
     {
+        Lookups.CreateTokenLookups();
         Parser parser = new Parser(position);
         parser._tokens = tokens;
         return parser;
@@ -25,33 +26,52 @@ public class Parser
         Parser p = CreateParser(0, tokens);
         while (!p.IsAtEnd())
         {
-            body.Append(StatementParser.ParseStatement(p));
+            var statements = body.Append(ParseStatements.ParseStatement(p));
         }
         
         return new BlockStatement(body);
     }
 
-    private Token Peek()
+    public Token Peek()
     {
         return _tokens[_position];
     }
 
-    private Token Advance()
+    public Token Advance()
     {
         Token tk = Peek();
         _position++;
         return tk;
     }
 
-    private bool IsAtEnd()
+    public bool IsAtEnd()
     {
         return _position < _tokens.Count &&
                Equals(CurrentTokenKind,
                    Token.TokenTypes.END_OF_FILE);
     }
 
-    private Token.TokenTypes CurrentTokenKind()
+    public Token.TokenTypes CurrentTokenKind()
     {
         return Peek().TokenType;
     }
+    
+    public Token ExpectError(Token.TokenTypes expectedKind, string errorMessage = "Unexpected token")
+    {
+        var token = Peek();
+        var kind = token.TokenType;
+
+        if (kind != expectedKind)
+        {
+            throw new Exception($"{errorMessage}. Expected: {expectedKind}, but got: {kind}");
+        }
+
+        return Advance();
+    }
+
+    public Token Expect(Token.TokenTypes expectedKind)
+    {
+        return this.ExpectError(expectedKind);
+    }
+
 }

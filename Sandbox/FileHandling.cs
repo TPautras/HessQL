@@ -1,6 +1,9 @@
 ﻿using System.Net;
 using System.Text;
+using System.Text.Json;
 using HessQLParser;
+using HessQLParser.Parser;
+using HessQLParser.Parser.Statements;
 
 namespace Sandbox;
 
@@ -76,12 +79,32 @@ public class FileHandling
 
     public static void Test()
     {
-        const string source = "FROM DATABASE SELECT 1234 'bonjour' Menu m";
+        const string source = "12 + 15;";
         var tokens = Tokenizer.Tokenize(source);
         if (tokens != null)
+        {
             foreach (var token in tokens)
             {
                 Console.WriteLine(Token.Debug(token));
             }
+
+            // Sérialisation JSON
+            try
+            {
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                };
+                string json = JsonSerializer.Serialize(tokens, options);
+                File.WriteAllText("tokens.json", json);
+                Console.WriteLine("Les tokens ont été enregistrés dans tokens.json");
+                BlockStatement nb = Parser.Parse(tokens);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+        }
     }
+
 }
