@@ -5,9 +5,9 @@ namespace HessQLParser.Parser.Statements;
 public class VarDeclStmt : IStatement
 {
     public string VarName;
-    public  IExpression AssignedValue;
+    public  IExpression? AssignedValue;
 
-    public VarDeclStmt(string varName, IExpression assignedValue)
+    public VarDeclStmt(string varName, IExpression? assignedValue = null)
     {
         VarName = varName;
         AssignedValue = assignedValue;
@@ -21,8 +21,8 @@ public class VarDeclStmt : IStatement
     public string Debug()
     {
         string res = "type: Variable declaration statement{";
-        res += "VariableName: \"" + VarName + "\"{";
-        res+= AssignedValue.Debug()+"}";
+        res += "VariableName{ \"" + VarName + "\"}Assigned Value{";
+        if (AssignedValue != null) res += AssignedValue.Debug() + "}";
         return res+"}";
     }
 
@@ -30,8 +30,17 @@ public class VarDeclStmt : IStatement
     {
         parser.Advance();
         string varName = parser.ExpectError(Token.TokenTypes.IDENTIFIER,"Expected to find variable name after a variable declaration statement").Value;
-        parser.Expect(Token.TokenTypes.ASSIGNMENT);
-        IExpression assignedValue = ParseExpressions.ParseExpression(parser, Lookups.BindingPower.Highest);
+        IExpression? assignedValue = null;
+        if (parser.CurrentTokenKind() == Token.TokenTypes.ASSIGNMENT)
+        {
+            parser.Expect(Token.TokenTypes.ASSIGNMENT);
+            assignedValue = ParseExpressions.ParseExpression(parser, Lookups.BindingPower.Lowest);
+        }
+        else
+        {
+            parser.Expect(Token.TokenTypes.SEMICOLON);
+        }
+        
         return new VarDeclStmt(
             varName,
             assignedValue

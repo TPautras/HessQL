@@ -54,7 +54,7 @@ public class Lookups
         LedLookup[kind] = handler;
     }
 
-    private static void Nud(Token.TokenTypes kind, BindingPower bp, NudHandler handler)
+    private static void Nud(Token.TokenTypes kind, NudHandler handler)
     {
         BpLookup[kind] = BindingPower.Highest;
         NudLookup[kind] = handler;
@@ -69,8 +69,8 @@ public class Lookups
     public static void CreateTokenLookups()
     {
         // Assignments
-        //Led(Token.TokenTypes.ASSIGNMENT, BindingPower.Equals, ParserMethods.ParseAssignmentExpr);
-        //Led(Token.TokenTypes.ADD_EQUALS, BindingPower.Equals, ParserMethods.ParseAssignmentExpr);
+        Led(Token.TokenTypes.ASSIGNMENT, BindingPower.Equals, AssignmentExpression.ParseAssignmentExpr);
+        Led(Token.TokenTypes.ADD_EQUALS, BindingPower.Equals, AssignmentExpression.ParseAssignmentExpr);
         //Led(Token.TokenTypes.SUBTRACT_EQUALS, BindingPower.Equals, ParserMethods.ParseAssignmentExpr);
 
         // Logical
@@ -93,14 +93,14 @@ public class Lookups
         Led(Token.TokenTypes.PERCENT, BindingPower.MultiplyDivide, ParseExpressions.ParseBinaryExpression);
 
         // Literals
-        Nud(Token.TokenTypes.INTEGER_LITERAL, BindingPower.Highest, ParseExpressions.ParsePrimaryExpr);
-        Nud(Token.TokenTypes.REAL_LITERAL, BindingPower.Highest, ParseExpressions.ParsePrimaryExpr);
-        Nud(Token.TokenTypes.STRING_LITERAL, BindingPower.Highest, ParseExpressions.ParsePrimaryExpr);
-        Nud(Token.TokenTypes.IDENTIFIER, BindingPower.Highest, ParseExpressions.ParsePrimaryExpr);
+        Nud(Token.TokenTypes.INTEGER_LITERAL,  ParseExpressions.ParsePrimaryExpr);
+        Nud(Token.TokenTypes.REAL_LITERAL,  ParseExpressions.ParsePrimaryExpr);
+        Nud(Token.TokenTypes.STRING_LITERAL, ParseExpressions.ParsePrimaryExpr);
+        Nud(Token.TokenTypes.IDENTIFIER, ParseExpressions.ParsePrimaryExpr);
 
         // Unary/Prefix
-        //Nud(Token.TokenTypes.MINUS, BindingPower.Unary, ParserMethods.ParsePrefixExpr);
-        //Nud(Token.TokenTypes.NOT, BindingPower.Unary, ParserMethods.ParsePrefixExpr);
+        Nud(Token.TokenTypes.MINUS,  PrefixExpression.ParsePrefixExpression);
+        Nud(Token.TokenTypes.NOT,  PrefixExpression.ParsePrefixExpression);
         //Nud(Token.TokenTypes.LEFT_BRACKET, BindingPower.Highest, ParserMethods.ParseArrayLiteralExpr);
 
         // Member / Call

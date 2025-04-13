@@ -80,7 +80,7 @@ public class FileHandling
     public static void Test()
     {
         var source = "12 + 15 * '44'-44+1212+44-112;";
-        source += "DECLARE bonjour SET 40";
+        source += "DECLARE bonjour;";
         var tokens = Tokenizer.Tokenize(source);
         if (tokens != null)
         {
