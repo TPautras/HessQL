@@ -13,4 +13,16 @@ public class BlockStatement : IStatement
     {
         
     }
+
+    public string Debug()
+    {
+        string res = "type: blockStatement{";
+
+        foreach (IStatement statement in body)
+        {
+            res += statement.Debug();
+        }
+        
+        return res+"}";
+    }
 }

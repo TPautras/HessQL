@@ -8,4 +8,11 @@ public class StringExpression : IExpression
     {
         throw new NotImplementedException();
     }
+
+    public string Debug()
+    {
+        string res = "type: StringExpression{";
+        res += "Value : " + Value;
+        return res+"}";
+    }
 }

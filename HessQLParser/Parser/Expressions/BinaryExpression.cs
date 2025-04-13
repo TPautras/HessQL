@@ -19,4 +19,13 @@ public class BinaryExpression :IExpression
     {
         
     }
+
+    public string Debug()
+    {
+        string res = "type: BinaryExpression{";
+        res += "Operator { " + "Value :"+Token.TokenKindToString(Operator)+"}";
+        res+= "LeftExpression {" + LeftExpression.Debug()+"}";
+        res += "RightExpression { " + RightExpression.Debug()+"}";
+        return res+"}";
+    }
 }

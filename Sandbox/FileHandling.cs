@@ -79,7 +79,7 @@ public class FileHandling
 
     public static void Test()
     {
-        const string source = "12 + 15;";
+        const string source = "12 + 15 * '44';";
         var tokens = Tokenizer.Tokenize(source);
         if (tokens != null)
         {
@@ -99,25 +99,14 @@ public class FileHandling
                 File.WriteAllText("tokens.json", json);
                 Console.WriteLine("Les tokens ont été enregistrés dans tokens.json");
                 var test = Parser.Parse(tokens);
-                Console.WriteLine(test.body.First());
-                ExportParsedAst(Parser.Parse(tokens), "parser.json");
+                string formatted = Helper.WriteAst(test.Debug());
+                Console.WriteLine(formatted);
+                File.WriteAllText("parserOutput.txt", formatted);
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
             }
         }
-    }
-    public static void ExportParsedAst(IStatement statement, string outputPath)
-    {
-        var options = new JsonSerializerOptions
-        {
-            WriteIndented = true,
-            // Si vous avez des types abstraits ou des interfaces, vous pouvez configurer un convertisseur ici
-            // Converters = { new YourCustomConverter() }
-        };
-
-        string json = JsonSerializer.Serialize((object)statement, options);
-        File.WriteAllText(outputPath, json);
     }
 }

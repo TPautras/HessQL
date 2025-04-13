@@ -9,4 +9,10 @@ public class CreateStatement : IStatement
     {
         throw new NotImplementedException();
     }
+
+    public string Debug()
+    {
+        string res = "type: CreateStatement{}";
+        return res;
+    }
 }

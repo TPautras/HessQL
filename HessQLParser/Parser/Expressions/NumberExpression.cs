@@ -8,4 +8,11 @@ public class NumberExpression :IExpression
     {
         
     }
+
+    public string Debug()
+    {
+        string res = "type: NumericExpression{";
+        res += "Value : " + Value;
+        return res+"}";;
+    }
 }

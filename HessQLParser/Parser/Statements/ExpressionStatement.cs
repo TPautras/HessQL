@@ -15,4 +15,9 @@ public class ExpressionStatement : IStatement
     {
         
     }
+
+    public string Debug()
+    {
+        return "type: ExpressionStatement{"+Expression.Debug()+"}";
+    }
 }
