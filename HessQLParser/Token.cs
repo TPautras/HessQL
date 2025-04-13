@@ -2,6 +2,6 @@
 
 public class Token
 {
-    public enum TokenType { Get; set; }
+    public enum TokenType { Get }
     
 }
