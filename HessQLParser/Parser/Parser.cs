@@ -27,7 +27,6 @@ public class Parser
         while (!p.IsAtEnd())
         {
             var statements = body.Append(ParseStatements.ParseStatement(p));
-            Console.ReadKey();
         }
         
         return new BlockStatement(body);
@@ -48,10 +47,6 @@ public class Parser
     public bool IsAtEnd()
     {
         bool isTokenEof = CurrentTokenKind() == Token.TokenTypes.END_OF_FILE;
-        Console.WriteLine("Position : " + _position);
-        Console.WriteLine("Token Count : " + _tokens.Count);
-        Console.WriteLine(CurrentTokenKind());
-        Console.WriteLine(isTokenEof);
         return _position >= _tokens.Count ||
                isTokenEof;
     }

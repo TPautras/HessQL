@@ -99,6 +99,8 @@ public class FileHandling
                 File.WriteAllText("tokens.json", json);
                 Console.WriteLine("Les tokens ont été enregistrés dans tokens.json");
                 BlockStatement nb = Parser.Parse(tokens);
+                string json2 = JsonSerializer.Serialize(nb, options);
+                Console.WriteLine("Le resultat du parser a été enregistré dans parser.json");
             }
             catch (Exception e)
             {
