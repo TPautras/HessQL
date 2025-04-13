@@ -2,7 +2,7 @@
 
 public class BlockStatement : IStatement
 {
-    public List<IStatement> body;
+    public List<IStatement> body { get; set; }
 
     public BlockStatement(List<IStatement> statements)
     {

@@ -98,9 +98,9 @@ public class FileHandling
                 string json = JsonSerializer.Serialize(tokens, options);
                 File.WriteAllText("tokens.json", json);
                 Console.WriteLine("Les tokens ont été enregistrés dans tokens.json");
-                BlockStatement nb = Parser.Parse(tokens);
-                string json2 = JsonSerializer.Serialize(nb, options);
-                Console.WriteLine("Le resultat du parser a été enregistré dans parser.json");
+                var test = Parser.Parse(tokens);
+                Console.WriteLine(test.body.First());
+                ExportParsedAst(Parser.Parse(tokens), "parser.json");
             }
             catch (Exception e)
             {
@@ -108,5 +108,16 @@ public class FileHandling
             }
         }
     }
+    public static void ExportParsedAst(IStatement statement, string outputPath)
+    {
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true,
+            // Si vous avez des types abstraits ou des interfaces, vous pouvez configurer un convertisseur ici
+            // Converters = { new YourCustomConverter() }
+        };
 
+        string json = JsonSerializer.Serialize((object)statement, options);
+        File.WriteAllText(outputPath, json);
+    }
 }

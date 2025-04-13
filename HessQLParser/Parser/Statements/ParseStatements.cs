@@ -21,9 +21,6 @@ public class ParseStatements
         var expression = ParseExpressions.ParseExpression(parser, Lookups.BindingPower.Lowest);
         parser.Expect(Token.TokenTypes.SEMICOLON);
         
-        return new ExpressionStatement()
-        {
-            Expression = expression,
-        };
+        return new ExpressionStatement(expression);
     }
 }

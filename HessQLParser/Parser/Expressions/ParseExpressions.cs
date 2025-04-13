@@ -60,11 +60,11 @@ public class ParseExpressions
         Token operatorToken = parser.Advance();
         IExpression right = ParseExpression(parser, bp);
 
-        return new BinaryExpression()
-        {
-            LeftExpression = left,
-            RightExpression = right,
-            Operator = operatorToken.TokenType
-        };
+        return new BinaryExpression(
+        
+            left,
+            operatorToken.TokenType,
+            right
+        );
     }
 }

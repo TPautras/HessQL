@@ -26,9 +26,8 @@ public class Parser
         Parser p = CreateParser(0, tokens);
         while (!p.IsAtEnd())
         {
-            var statements = body.Append(ParseStatements.ParseStatement(p));
+            body.Add(ParseStatements.ParseStatement(p));
         }
-        
         return new BlockStatement(body);
     }
 
