@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json;
 using HessQLParser.Parser;
 
 namespace HessQLParser;
@@ -44,5 +45,16 @@ public class Helper
             }
         }
         return output.ToString();
+    }
+
+    public static string ConvertToJson(object input)
+    {
+            
+        var options = new JsonSerializerOptions
+        {
+            WriteIndented = true
+        };
+
+        return JsonSerializer.Serialize(input, options);
     }
 }

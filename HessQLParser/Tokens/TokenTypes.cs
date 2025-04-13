@@ -328,7 +328,7 @@ public partial class Token
         { TokenTypes.OPTION, "OPTION" },
         { TokenTypes.RECONFIGURE, "RECONFIGURE" },
         { TokenTypes.USE, "USE" },
-        { TokenTypes.SET, "SET" },
+        { TokenTypes.ASSIGNMENT, "SET" },
         { TokenTypes.DECLARE, "DECLARE" },
         { TokenTypes.PRINT, "PRINT" },
         { TokenTypes.EXEC, "EXEC" },

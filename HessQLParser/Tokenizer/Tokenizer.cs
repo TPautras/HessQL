@@ -129,7 +129,6 @@ public partial class Tokenizer
     
     private static RegexHandler StringHandler()
     {
-        
         return (Tokenizer tokenizer, Match match ) =>
         {
             string matchedValue = match.Value;

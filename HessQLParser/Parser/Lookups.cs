@@ -1,4 +1,5 @@
 ﻿using HessQLParser.Parser.Expressions;
+using HessQLParser.Parser.Statements;
 
 namespace HessQLParser.Parser;
 
@@ -115,7 +116,8 @@ public class Lookups
         
 
         // Statements (adapt to your grammar)
-        //Stmt(Token.TokenTypes.SELECT, ParserMethods.ParseSelectStmt);
+        Stmt(Token.TokenTypes.SELECT, SelectStmt.ParseSelectStmt);
+        Stmt(Token.TokenTypes.DECLARE, VarDeclStmt.ParseVarDeclStmt);
         //Stmt(Token.TokenTypes.FROM, ParserMethods.ParseSelectStmt);
     }
 }

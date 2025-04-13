@@ -79,7 +79,8 @@ public class FileHandling
 
     public static void Test()
     {
-        const string source = "12 + 15 * '44';";
+        var source = "12 + 15 * '44'-44+1212+44-112;";
+        source += "DECLARE bonjour SET 40";
         var tokens = Tokenizer.Tokenize(source);
         if (tokens != null)
         {
@@ -108,5 +109,13 @@ public class FileHandling
                 Console.WriteLine(e);
             }
         }
+    }
+
+    public static void Test2()
+    {
+        const string source = "SELECT";
+        var tokens = Tokenizer.Tokenize(source);
+        BlockStatement parsedStatement = Parser.Parse(tokens);
+        Console.WriteLine(parsedStatement.Debug());
     }
 }
