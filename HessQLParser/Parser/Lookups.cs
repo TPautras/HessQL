@@ -117,6 +117,7 @@ public class Lookups
 
         // Statements (adapt to your grammar)
         Stmt(Token.TokenTypes.SELECT, SelectStmt.ParseSelectStmt);
+        Stmt(Token.TokenTypes.INSERT, InsertStmt.ParseInsertStmt);
         Stmt(Token.TokenTypes.DECLARE, VarDeclStmt.ParseVarDeclStmt);
         //Stmt(Token.TokenTypes.FROM, ParserMethods.ParseSelectStmt);
     }

@@ -113,7 +113,7 @@ public class FileHandling
 
     public static void Test2()
     {
-        const string source = "SELECT";
+        const string source = @"SELECT daba FROM bonjour";
         var tokens = Tokenizer.Tokenize(source);
         BlockStatement parsedStatement = Parser.Parse(tokens);
         Console.WriteLine(parsedStatement.Debug());

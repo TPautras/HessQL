@@ -4,6 +4,9 @@ public class ParseExpressions
 {
     public static IExpression ParseExpression(Parser parser, Lookups.BindingPower bp)
     {
+        if (parser.CurrentTokenKind() == Token.TokenTypes.END_OF_FILE)
+            throw new Exception("Erreur syntaxique : fin de fichier inattendue alors qu'une expression était attendue.");
+        
         Token.TokenTypes tokenType = parser.CurrentTokenKind();
 
         if (!Lookups.NudLookup.TryGetValue(tokenType, out var nudFn))
