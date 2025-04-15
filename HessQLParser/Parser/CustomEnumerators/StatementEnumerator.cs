@@ -5,17 +5,13 @@ using HessQLParser.Parser;
 
 namespace HessQLParser.Parser.CustomEnumerators
 {
-    public class StatementEnumerator : IEnumerable<IStatement>, IEnumerator<IStatement>
+    public class StatementEnumerable : IEnumerable<IStatement>
     {
         private readonly IList<IStatement> _statements;
-        private int _index;
 
-        public StatementEnumerator() : this(new List<IStatement>()) { }
-
-        public StatementEnumerator(IEnumerable<IStatement> statements)
+        public StatementEnumerable(IEnumerable<IStatement> statements)
         {
             _statements = new List<IStatement>(statements);
-            _index = -1;
         }
 
         public IEnumerator<IStatement> GetEnumerator()
@@ -27,15 +23,16 @@ namespace HessQLParser.Parser.CustomEnumerators
         {
             return GetEnumerator();
         }
+    }
 
-        public bool MoveNext()
-        {
-            _index++;
-            return _index < _statements.Count;
-        }
+    public class StatementEnumerator : IEnumerator<IStatement>
+    {
+        private readonly IList<IStatement> _statements;
+        private int _index;
 
-        public void Reset()
+        public StatementEnumerator(IList<IStatement> statements)
         {
+            _statements = statements;
             _index = -1;
         }
 
@@ -51,6 +48,19 @@ namespace HessQLParser.Parser.CustomEnumerators
 
         object IEnumerator.Current => Current;
 
-        public void Dispose() { }
+        public bool MoveNext()
+        {
+            _index++;
+            return _index < _statements.Count;
+        }
+
+        public void Reset()
+        {
+            _index = -1;
+        }
+
+        public void Dispose()
+        {
+        }
     }
 }

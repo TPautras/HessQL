@@ -1,8 +1,9 @@
-﻿using HessQLParser.Parser.CustomEnumerators;
+﻿using System.Collections;
+using HessQLParser.Parser.CustomEnumerators;
 
 namespace HessQLParser.Parser.Statements;
 
-public class BlockStmt :  StatementEnumerator, IStatement
+public class BlockStmt :  IStatement, IEnumerable<IStatement>
 {
     public List<IStatement> body { get; set; }
 
@@ -26,5 +27,15 @@ public class BlockStmt :  StatementEnumerator, IStatement
         }
         
         return res+"}";
+    }
+    
+    public IEnumerator<IStatement> GetEnumerator()
+    {
+        return new StatementEnumerator(body);
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
     }
 }
