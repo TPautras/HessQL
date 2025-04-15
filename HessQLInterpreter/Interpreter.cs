@@ -9,7 +9,7 @@ public class Interpreter
     {
         foreach (IStatement statement in parsedStatement)
         {
-            
+            //
         }
     }
 }
