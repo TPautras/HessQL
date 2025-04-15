@@ -22,6 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\HessQLCommands\HessQLCommands.csproj" />
       <ProjectReference Include="..\Sandbox\Sandbox.csproj" />
     </ItemGroup>
 

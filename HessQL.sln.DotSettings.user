@@ -1,7 +1,18 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=803ad51f_002D0a27_002D4a43_002Dab18_002D9846fe677ef3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Commands.DDL.CreateDBtest.test1&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b8f9cf44_002D4b6a_002D41b1_002D8ae8_002D01c068e9ff7c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Tests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Tests&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=c815dcd0_002Da1bc_002D4bbd_002D8475_002D61195647a90a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Tests.Test1&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Tests.Test2&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::9A45B464-44E8-4865-BD20-5ABEDA93A40A::net8.0::UnitTesting.Commands.DDL.CreateDBtest.test1&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
