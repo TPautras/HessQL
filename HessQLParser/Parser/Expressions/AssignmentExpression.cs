@@ -1,6 +1,9 @@
-﻿namespace HessQLParser.Parser.Expressions;
+﻿using System.Collections;
+using HessQLParser.Parser.CustomEnumerators;
 
-public class AssignmentExpression : IExpression
+namespace HessQLParser.Parser.Expressions;
+
+public class AssignmentExpression : ExpressionEnumerator, IExpression
 {
     public AssignmentExpression(IExpression assignee, Token @operator, IExpression value)
     {
