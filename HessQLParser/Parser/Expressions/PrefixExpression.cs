@@ -1,6 +1,8 @@
-﻿namespace HessQLParser.Parser.Expressions;
+﻿using HessQLParser.Parser.CustomEnumerators;
 
-public class PrefixExpression : IExpression
+namespace HessQLParser.Parser.Expressions;
+
+public class PrefixExpression : ExpressionEnumerator, IExpression
 { 
     public PrefixExpression(Token @operator, IExpression rightExpression)
     {

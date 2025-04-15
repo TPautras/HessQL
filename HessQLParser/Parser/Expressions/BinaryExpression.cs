@@ -1,8 +1,9 @@
 ﻿using System.Linq.Expressions;
+using HessQLParser.Parser.CustomEnumerators;
 
 namespace HessQLParser.Parser.Expressions;
 
-public class BinaryExpression :IExpression
+public class BinaryExpression :ExpressionEnumerator, IExpression
 {
     public BinaryExpression(IExpression leftExpression, Token.TokenTypes @operator, IExpression rightExpression)
     {

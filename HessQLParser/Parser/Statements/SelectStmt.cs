@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using HessQLParser.Parser.CustomEnumerators;
 using HessQLParser.Parser.Expressions;
 
 namespace HessQLParser.Parser.Statements
@@ -32,7 +33,7 @@ namespace HessQLParser.Parser.Statements
     /// <summary>
     /// Représente une instruction SELECT avec toutes les options.
     /// </summary>
-    public class SelectStmt : IStatement
+    public class SelectStmt : StatementEnumerator, IStatement
     {
         public bool IsDistinct { get; set; }
         public int? Top { get; set; }

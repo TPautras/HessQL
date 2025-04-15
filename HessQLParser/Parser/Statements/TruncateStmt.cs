@@ -1,9 +1,11 @@
 ﻿using System.Linq;
 using HessQLParser.Parser.Expressions;
 using HessQLParser.Errors;
+using HessQLParser.Parser.CustomEnumerators;
+
 namespace HessQLParser.Parser.Statements
 {
-    public class TruncateStmt : IStatement
+    public class TruncateStmt : StatementEnumerator, IStatement
     {
         public IExpression Table { get; set; }
         public TruncateStmt(IExpression table)

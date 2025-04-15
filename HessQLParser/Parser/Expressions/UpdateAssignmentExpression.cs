@@ -1,6 +1,8 @@
-﻿namespace HessQLParser.Parser.Expressions;
+﻿using HessQLParser.Parser.CustomEnumerators;
 
-public class UpdateAssignmentExpression : IExpression
+namespace HessQLParser.Parser.Expressions;
+
+public class UpdateAssignmentExpression : ExpressionEnumerator, IExpression
 {
     public string Column { get; set; }
     public IExpression Expression { get; set; }

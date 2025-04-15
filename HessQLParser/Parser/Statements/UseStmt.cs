@@ -1,9 +1,11 @@
 ﻿using System.Linq;
 using HessQLParser.Parser.Expressions;
 using HessQLParser.Errors;
+using HessQLParser.Parser.CustomEnumerators;
+
 namespace HessQLParser.Parser.Statements
 {
-    public class UseStmt : IStatement
+    public class UseStmt : StatementEnumerator, IStatement
     {
         public string Database { get; set; }
         public UseStmt(string database)

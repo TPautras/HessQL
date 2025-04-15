@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace HessQLParser.Parser.CustomEnumerators
@@ -10,15 +11,12 @@ namespace HessQLParser.Parser.CustomEnumerators
         private readonly IList<Expression> _expressions;
         private int _index;
 
+        public ExpressionEnumerator() : this(Enumerable.Empty<Expression>()) { }
+
         public ExpressionEnumerator(IEnumerable<Expression> expressions)
         {
             _expressions = new List<Expression>(expressions);
             _index = -1;
-        }
-
-        protected ExpressionEnumerator()
-        {
-            throw new NotImplementedException();
         }
 
         public IEnumerator<Expression> GetEnumerator()
@@ -47,15 +45,13 @@ namespace HessQLParser.Parser.CustomEnumerators
             get
             {
                 if (_index < 0 || _index >= _expressions.Count)
-                    throw new InvalidOperationException("Current is not valid");
+                    throw new InvalidOperationException();
                 return _expressions[_index];
             }
         }
 
         object IEnumerator.Current => Current;
 
-        public void Dispose()
-        {
-        }
+        public void Dispose() { }
     }
 }

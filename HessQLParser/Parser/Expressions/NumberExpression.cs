@@ -1,6 +1,8 @@
-﻿namespace HessQLParser.Parser.Expressions;
+﻿using HessQLParser.Parser.CustomEnumerators;
 
-public class NumberExpression :IExpression
+namespace HessQLParser.Parser.Expressions;
+
+public class NumberExpression : ExpressionEnumerator, IExpression
 {
     public float Value;
 

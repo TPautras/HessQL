@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using HessQLParser.Parser.Expressions;
 using HessQLParser.Errors;
+using HessQLParser.Parser.CustomEnumerators;
+
 namespace HessQLParser.Parser.Statements
 {
     public class UpdateAssignment
@@ -18,7 +20,7 @@ namespace HessQLParser.Parser.Statements
         }
     }
 
-    public class UpdateStmt : IStatement
+    public class UpdateStmt : StatementEnumerator, IStatement
     {
         public IExpression Table { get; set; }
         public List<UpdateAssignment> Assignments { get; set; }

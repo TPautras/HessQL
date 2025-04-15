@@ -1,9 +1,11 @@
 ﻿using System.Linq;
 using HessQLParser.Parser.Expressions;
 using HessQLParser.Errors;
+using HessQLParser.Parser.CustomEnumerators;
+
 namespace HessQLParser.Parser.Statements
 {
-    public class DropStmt : IStatement
+    public class DropStmt : StatementEnumerator, IStatement
     {
         public IExpression Table { get; set; }
         public DropStmt(IExpression table)

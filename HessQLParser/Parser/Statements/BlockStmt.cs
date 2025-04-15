@@ -1,6 +1,8 @@
-﻿namespace HessQLParser.Parser.Statements;
+﻿using HessQLParser.Parser.CustomEnumerators;
 
-public class BlockStmt : IStatement
+namespace HessQLParser.Parser.Statements;
+
+public class BlockStmt :  StatementEnumerator, IStatement
 {
     public List<IStatement> body { get; set; }
 

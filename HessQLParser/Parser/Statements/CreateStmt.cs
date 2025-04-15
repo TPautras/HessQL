@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using HessQLParser.Parser.Expressions;
 using HessQLParser.Errors;
+using HessQLParser.Parser.CustomEnumerators;
+
 namespace HessQLParser.Parser.Statements
 {
     public class ColumnDefinition
@@ -17,7 +19,7 @@ namespace HessQLParser.Parser.Statements
             return ColumnName + " " + DataType;
         }
     }
-    public class CreateTableStmt : IStatement
+    public class CreateTableStmt : StatementEnumerator, IStatement
     {
         public IExpression Table { get; set; }
         public List<ColumnDefinition> Columns { get; set; }

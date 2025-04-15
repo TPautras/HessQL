@@ -10,6 +10,8 @@ namespace HessQLParser.Parser.CustomEnumerators
         private readonly IList<IStatement> _statements;
         private int _index;
 
+        public StatementEnumerator() : this(new List<IStatement>()) { }
+
         public StatementEnumerator(IEnumerable<IStatement> statements)
         {
             _statements = new List<IStatement>(statements);
@@ -42,15 +44,13 @@ namespace HessQLParser.Parser.CustomEnumerators
             get
             {
                 if (_index < 0 || _index >= _statements.Count)
-                    throw new InvalidOperationException("Current is not valid");
+                    throw new InvalidOperationException();
                 return _statements[_index];
             }
         }
 
         object IEnumerator.Current => Current;
 
-        public void Dispose()
-        {
-        }
+        public void Dispose() { }
     }
 }

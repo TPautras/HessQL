@@ -1,8 +1,9 @@
-﻿using HessQLParser.Parser.Expressions;
+﻿using HessQLParser.Parser.CustomEnumerators;
+using HessQLParser.Parser.Expressions;
 
 namespace HessQLParser.Parser.Statements;
 
-public class VarDeclStmt : IStatement
+public class VarDeclStmt : StatementEnumerator, IStatement
 {
     public string VarName;
     public  IExpression? AssignedValue;

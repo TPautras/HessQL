@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using HessQLParser.Parser.CustomEnumerators;
 using HessQLParser.Parser.Expressions;
 
 namespace HessQLParser.Parser.Statements
@@ -6,7 +7,7 @@ namespace HessQLParser.Parser.Statements
     /// <summary>
     /// Représente une instruction INSERT.
     /// </summary>
-    public class InsertStmt : IStatement
+    public class InsertStmt : StatementEnumerator, IStatement
     {
         public IExpression Table { get; set; }
         public List<string>? Columns { get; set; }
