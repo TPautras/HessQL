@@ -33,7 +33,7 @@ namespace HessQLParser.Parser.Statements
     /// <summary>
     /// Représente une instruction SELECT avec toutes les options.
     /// </summary>
-    public class SelectStmt : StatementEnumerator, IStatement
+    public class SelectStmt : IStatement
     {
         public bool IsDistinct { get; set; }
         public int? Top { get; set; }

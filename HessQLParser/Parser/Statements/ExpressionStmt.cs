@@ -3,7 +3,7 @@ using HessQLParser.Parser.CustomEnumerators;
 
 namespace HessQLParser.Parser.Statements;
 
-public class ExpressionStmt : StatementEnumerator, IStatement
+public class ExpressionStmt : IStatement
 {
     public IExpression Expression { get; set; }
     

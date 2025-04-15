@@ -3,7 +3,7 @@ using HessQLParser.Parser.Expressions;
 
 namespace HessQLParser.Parser.Statements;
 
-public class VarDeclStmt : StatementEnumerator, IStatement
+public class VarDeclStmt : IStatement
 {
     public string VarName;
     public  IExpression? AssignedValue;

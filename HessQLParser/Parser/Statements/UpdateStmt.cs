@@ -20,7 +20,7 @@ namespace HessQLParser.Parser.Statements
         }
     }
 
-    public class UpdateStmt : StatementEnumerator, IStatement
+    public class UpdateStmt : IStatement
     {
         public IExpression Table { get; set; }
         public List<UpdateAssignment> Assignments { get; set; }

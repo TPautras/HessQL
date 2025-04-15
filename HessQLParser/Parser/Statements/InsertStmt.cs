@@ -7,7 +7,7 @@ namespace HessQLParser.Parser.Statements
     /// <summary>
     /// Représente une instruction INSERT.
     /// </summary>
-    public class InsertStmt : StatementEnumerator, IStatement
+    public class InsertStmt : IStatement
     {
         public IExpression Table { get; set; }
         public List<string>? Columns { get; set; }

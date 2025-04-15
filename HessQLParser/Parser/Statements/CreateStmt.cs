@@ -19,7 +19,7 @@ namespace HessQLParser.Parser.Statements
             return ColumnName + " " + DataType;
         }
     }
-    public class CreateTableStmt : StatementEnumerator, IStatement
+    public class CreateTableStmt : IStatement
     {
         public IExpression Table { get; set; }
         public List<ColumnDefinition> Columns { get; set; }

@@ -5,7 +5,7 @@ using HessQLParser.Parser.CustomEnumerators;
 
 namespace HessQLParser.Parser.Statements
 {
-    public class DeleteStmt : StatementEnumerator, IStatement
+    public class DeleteStmt : IStatement
     {
         public IExpression Table { get; set; }
         public IExpression? WhereClause { get; set; }

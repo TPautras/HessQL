@@ -5,7 +5,7 @@ using HessQLParser.Parser.CustomEnumerators;
 
 namespace HessQLParser.Parser.Statements
 {
-    public class UseStmt : StatementEnumerator, IStatement
+    public class UseStmt : IStatement
     {
         public string Database { get; set; }
         public UseStmt(string database)

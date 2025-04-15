@@ -5,7 +5,7 @@ using HessQLParser.Parser.CustomEnumerators;
 
 namespace HessQLParser.Parser.Statements
 {
-    public class DropStmt : StatementEnumerator, IStatement
+    public class DropStmt : IStatement
     {
         public IExpression Table { get; set; }
         public DropStmt(IExpression table)
