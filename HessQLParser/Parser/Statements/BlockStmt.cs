@@ -1,10 +1,10 @@
 ﻿namespace HessQLParser.Parser.Statements;
 
-public class BlockStatement : IStatement
+public class BlockStmt : IStatement
 {
     public List<IStatement> body { get; set; }
 
-    public BlockStatement(List<IStatement> statements)
+    public BlockStmt(List<IStatement> statements)
     {
         body = statements;
     }

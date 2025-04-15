@@ -45,7 +45,6 @@ namespace HessQLParser.Parser.Statements
         public static IStatement ParseInsertStmt(Parser parser)
         {
             parser.Advance();
-            Console.WriteLine(parser.Peek().TokenType);
             if (parser.CurrentTokenKind() == Token.TokenTypes.INTO)
                 parser.Advance();
             IExpression tableExpr = ParseExpressions.ParsePrimaryExpr(parser);
@@ -65,7 +64,6 @@ namespace HessQLParser.Parser.Statements
                 }
                 parser.Expect(Token.TokenTypes.RIGHT_PAREN);
             }
-            Console.WriteLine(parser.CurrentTokenKind());
             parser.Expect(Token.TokenTypes.VALUES);
             parser.Expect(Token.TokenTypes.LEFT_PAREN);
             List<IExpression> values = new List<IExpression>();

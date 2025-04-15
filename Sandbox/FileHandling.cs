@@ -115,7 +115,7 @@ public class FileHandling
     {
         const string source = @"INSERT INTO bonjour VALUES (test);";
         var tokens = Tokenizer.Tokenize(source);
-        BlockStatement parsedStatement = Parser.Parse(tokens);
-        Console.WriteLine(parsedStatement.Debug());
+        BlockStmt parsedStmt = Parser.Parse(tokens);
+        Console.WriteLine(parsedStmt.Debug());
     }
 }

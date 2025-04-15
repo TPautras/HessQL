@@ -20,7 +20,7 @@ public class Parser
         return parser;
     }
 
-    public static BlockStatement Parse(List<Token> tokens)
+    public static BlockStmt Parse(List<Token> tokens)
     {
         List<IStatement> body = new List<IStatement>();
         Parser p = CreateParser(0, tokens);
@@ -28,7 +28,7 @@ public class Parser
         {
             body.Add(ParseStatements.ParseStatement(p));
         }
-        return new BlockStatement(body);
+        return new BlockStmt(body);
     }
 
     public Token Peek()

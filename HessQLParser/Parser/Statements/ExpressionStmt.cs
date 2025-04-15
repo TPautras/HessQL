@@ -2,11 +2,11 @@
 
 namespace HessQLParser.Parser.Statements;
 
-public class ExpressionStatement : IStatement
+public class ExpressionStmt : IStatement
 {
     public IExpression Expression { get; set; }
     
-    public ExpressionStatement(IExpression expression)
+    public ExpressionStmt(IExpression expression)
     {
         Expression = expression;
     }
@@ -18,6 +18,6 @@ public class ExpressionStatement : IStatement
 
     public string Debug()
     {
-        return "type: ExpressionStatement{"+Expression.Debug()+"}";
+        return "type: ExpressionStmt{"+Expression.Debug()+"}";
     }
 }

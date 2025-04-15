@@ -1,9 +1,9 @@
 ﻿namespace HessQLParser.Parser;
 /// <summary>
 /// Types of Statements :
-/// BlockStatement
+/// BlockStmt
 ///     List of statements <list type="IStatement"></list>
-/// ExpressionStatement
+/// ExpressionStmt
 ///     Expression IExpression
 /// VarDeclStatement
 ///     VariableName string
