@@ -1,6 +1,6 @@
-﻿namespace HessQLCommands;
+﻿namespace HessQLCommands.DDL_Commands;
 
-public class DDL_Commands
+public class Create
 {
     public static void CreateDatabase(string NomDB)
     {

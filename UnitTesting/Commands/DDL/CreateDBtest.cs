@@ -7,7 +7,7 @@ public class CreateDBtest
     public static void test1()
     {
         string nom = "ouiouaa";
-        HessQLCommands.DDL_Commands.CreateDatabase(nom);
+        HessQLCommands.DDL_Commands.Create.CreateTable(nom, nom);
         
     }
   
