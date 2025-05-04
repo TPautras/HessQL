@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <TargetFramework>net472</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Version>1.1.0</Version>
+        <Authors>TPautras</Authors>
+        <Company>Electriciens</Company>
+        <Description>Parser SQL HessQL compatible .NET 4.7.2</Description>
+        <PackageId>HessQL.Parser</PackageId>
+    </PropertyGroup>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{EFFE40D8-9FBA-425B-8D82-EAA9A9E3F78A}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>HessQLParser472</RootNamespace>
+        <AssemblyName>HessQLParser472</AssemblyName>
+        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.0-preview.3.25171.5\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib" />
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.IO.Pipelines, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.IO.Pipelines.10.0.0-preview.3.25171.5\lib\net462\System.IO.Pipelines.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encodings.Web, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Text.Encodings.Web.10.0.0-preview.3.25171.5\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Text.Json.10.0.0-preview.3.25171.5\lib\net462\System.Text.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Errors\ParserErrors.cs" />
+        <Compile Include="Errors\ParsingException.cs" />
+        <Compile Include="Helper.cs" />
+        <Compile Include="Parser\CustomEnumerators\ExpressionEnumerator.cs" />
+        <Compile Include="Parser\CustomEnumerators\StatementEnumerator.cs" />
+        <Compile Include="Parser\Expressions\AssignmentExpression.cs" />
+        <Compile Include="Parser\Expressions\BinaryExpression.cs" />
+        <Compile Include="Parser\Expressions\NumberExpression.cs" />
+        <Compile Include="Parser\Expressions\ParseExpressions.cs" />
+        <Compile Include="Parser\Expressions\PrefixExpression.cs" />
+        <Compile Include="Parser\Expressions\StringExpression.cs" />
+        <Compile Include="Parser\Expressions\SymbolExpression.cs" />
+        <Compile Include="Parser\Expressions\UpdateAssignmentExpression.cs" />
+        <Compile Include="Parser\Interfaces\IExpression.cs" />
+        <Compile Include="Parser\Interfaces\IStatement.cs" />
+        <Compile Include="Parser\Lookups.cs" />
+        <Compile Include="Parser\Parser.cs" />
+        <Compile Include="Parser\Statements\AlterStmt.cs" />
+        <Compile Include="Parser\Statements\BlockStmt.cs" />
+        <Compile Include="Parser\Statements\CreateStmt.cs" />
+        <Compile Include="Parser\Statements\DeleteStmt.cs" />
+        <Compile Include="Parser\Statements\DropStmt.cs" />
+        <Compile Include="Parser\Statements\ExpressionStmt.cs" />
+        <Compile Include="Parser\Statements\InsertStmt.cs" />
+        <Compile Include="Parser\Statements\ParseStatements.cs" />
+        <Compile Include="Parser\Statements\SelectStmt.cs" />
+        <Compile Include="Parser\Statements\TruncateStmt.cs" />
+        <Compile Include="Parser\Statements\UpdateStmt.cs" />
+        <Compile Include="Parser\Statements\UseStmt.cs" />
+        <Compile Include="Parser\Statements\VarDeclStmt.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Tokenizer\RegexPattern.cs" />
+        <Compile Include="Tokenizer\Tokenizer.cs" />
+        <Compile Include="Tokens\Token.cs" />
+        <Compile Include="Tokens\TokenTypes.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="HessQL.Parser.nuspec" />
+    </ItemGroup>
+    <PropertyGroup>
+        <RuntimeIdentifiers>win</RuntimeIdentifiers>
+    </PropertyGroup>
+
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
